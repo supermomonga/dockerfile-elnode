@@ -1,0 +1,5 @@
+emacs:
+  build: .
+  ports:
+  volumes:
+    - elisp:/elisp
