@@ -1,2 +1,3 @@
 
-elisp/*.el
+dot-emacs.d/*
+!dot-emacs.d/.gitkeep

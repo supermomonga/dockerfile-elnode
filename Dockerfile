@@ -1,6 +1,7 @@
 FROM debian:jessie
 MAINTAINER supermomonga
 
+## Install dependencies
 RUN apt-get update \
     && apt-get install -y\
     autoconf\
@@ -24,9 +25,19 @@ RUN apt-get update \
     git\
     && rm -rf /var/lib/apt/lists/*
 
+## Install emacs
 RUN git clone --depth 1 git://git.sv.gnu.org/emacs.git\
     && cd emacs\
     && ./autogen.sh\
-    && ./configure\
+    && ./configure --with-x-toolkit=lucid\
     && make bootstrap\
     && make install
+
+ENV PORT 8000
+EXPOSE 8000
+
+VOLUME /root/app
+VOLUME /root/.emacs.d
+
+## Run Emacs as a daemon and kepp container alive by usin tail
+CMD emacs --daemon --load=/root/app/app.el
