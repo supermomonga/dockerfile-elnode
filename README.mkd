@@ -1,4 +1,10 @@
 
-# Dockerfile for Emacs Lisp development
+# Dockerfile for serve Elnode based web-application.
 
-`(WIP)`
+
+```sh
+docker-compose build
+docker-compose up
+```
+
+Then `app/app.el` loaded and you can access this web application via `lvh.me:8081`.
