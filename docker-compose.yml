@@ -1,7 +1,9 @@
 emacs:
   build: .
+  environment:
+    - PORT=80
   ports:
-    - "8081:8000"
+    - "8081:80"
   volumes:
     - dot-emacs.d:/root/.emacs.d
     - app:/root/app

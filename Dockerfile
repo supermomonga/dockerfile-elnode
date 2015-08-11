@@ -33,9 +33,6 @@ RUN git clone --depth 1 git://git.sv.gnu.org/emacs.git\
     && make bootstrap\
     && make install
 
-ENV PORT 8000
-EXPOSE 8000
-
 VOLUME /root/app
 VOLUME /root/.emacs.d
 
