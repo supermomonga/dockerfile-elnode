@@ -15,5 +15,3 @@
 
 (elnode-start 'my-test-handler :port (getenv "PORT") :host "0.0.0.0")
 
-(while t
-  (accept-process-output nil 1))
