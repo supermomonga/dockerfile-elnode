@@ -38,3 +38,16 @@ Which means you can overwrite your web application's feature without restarting 
                    (elnode-http-return httpcon (format "<html><h1>New handler!</h1><p>%s</p></html>" (emacs-version)))))
 
 ```
+
+# for VirtualBox users
+
+If you use OS X or Windows, you must be using VirtualBox's VM to run docker daemon, via docker-machine.
+
+Assuming the VM's name is `default`(It's default name if you use docker toolbox), you need to set portforwarding like following:
+
+```sh
+VBoxManage modifyvm "default" --natpf1 "tcp-port1234,tcp,,1234,,1234"
+VBoxManage modifyvm "default" --natpf1 "udp-port1234,udp,,1234,,1234"
+VBoxManage modifyvm "default" --natpf1 "tcp-port8081,tcp,,8081,,8081"
+VBoxManage modifyvm "default" --natpf1 "udp-port8081,udp,,8081,,8081"
+```
