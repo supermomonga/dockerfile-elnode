@@ -1,5 +1,5 @@
 
-# Dockerfile for serve Elnode based web-application.
+# Dockerfile for rapid developing Elnode based web-application.
 
 
 ```sh
