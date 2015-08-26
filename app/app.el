@@ -13,5 +13,5 @@
   (elnode-http-start httpcon 200 '("Content-type" . "text/html"))
   (elnode-http-return httpcon (format "<html><h1>Hello Elnode</h1><p>%s</p></html>" (emacs-version))))
 
-(elnode-start 'my-test-handler :port (getenv "PORT") :host "0.0.0.0")
+(elnode-start 'my-test-handler :port (or (getenv "PORT") 80) :host "localhost")
 
