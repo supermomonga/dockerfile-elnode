@@ -1,7 +1,6 @@
 emacs:
   build: .
   environment:
-    - PORT=80
     - SERVER_NAME=emacs_server
   ports:
     - "8081:80"
