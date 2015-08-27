@@ -51,3 +51,13 @@ VBoxManage modifyvm "default" --natpf1 "udp-port1234,udp,,1234,,1234"
 VBoxManage modifyvm "default" --natpf1 "tcp-port8081,tcp,,8081,,8081"
 VBoxManage modifyvm "default" --natpf1 "udp-port8081,udp,,8081,,8081"
 ```
+
+# Deployment
+
+## sloppy.io
+
+Host your docker container at [sloppy.io](http://sloppy.io).
+
+```bash
+sloppy start sloppy.json --var domain:YOUR_FAVORITE_NAME.sloppy.zone
+```
