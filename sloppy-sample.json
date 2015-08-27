@@ -1,0 +1,25 @@
+{
+    "project": "elnode",
+    "services": [
+        {
+            "id": "frontend",
+            "apps": [
+                {
+                    "id": "emacs",
+                    "domain": {
+                        "type": "HTTP",
+                        "uri": "$domain"
+                    },
+                    "mem": 128,
+                    "image": "momonga/elnode-sample:latest",
+                    "instances": 1,
+                    "port_mappings": [
+                        {
+                            "container_port": 80
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
